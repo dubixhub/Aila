@@ -48,7 +48,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 className="flex items-center"
               >
                 <img 
-                  src="/images/logo.png" 
+                  src={logo} 
                   alt="AILA Logo" 
                   className="w-[100px] md:w-[100px] sm:w-[170px] h-auto object-contain"
                 />
