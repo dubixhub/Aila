@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Shield, Menu, X, LogOut, User, Settings } from 'lucide-react';
+import { Menu, X, LogOut, User, Settings } from 'lucide-react';
 import { useState } from 'react';
 import { getCurrentUser, logoutUser } from '@/lib/storage';
 import { Button } from '@/components/ui/button';
@@ -43,12 +43,15 @@ export const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group">
               <motion.div
-                whileHover={{ rotate: 10 }}
-                className="p-2 rounded-xl bg-primary/10"
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center"
               >
-                <Shield className="w-6 h-6 text-primary" />
+                <img 
+                  src="/images/logo.png" 
+                  alt="AILA Logo" 
+                  className="w-[100px] md:w-[100px] sm:w-[170px] h-auto object-contain"
+                />
               </motion.div>
-              <span className="text-xl font-bold gradient-text">AILA</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -201,11 +204,11 @@ export const Layout = ({ children }: LayoutProps) => {
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-primary" />
-              <span className="font-semibold gradient-text">AILA</span>
-              <span className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} All rights reserved
-              </span>
+              <img 
+                src="/images/logo.png" 
+                alt="AILA Logo" 
+                className="h-5 w-5 object-contain"
+              />
             </div>
             <div className="flex items-center gap-6">
               <Link
