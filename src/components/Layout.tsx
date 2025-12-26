@@ -50,7 +50,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 <img 
                   src={logo} 
                   alt="AILA Logo" 
-                  className="w-[170px] md:w-[100px] h-auto object-contain"
+                  className="w-[100px] md:w-[100px] h-auto object-contain"
                 />
               </motion.div>
             </Link>
