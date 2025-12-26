@@ -4,6 +4,7 @@ import { Menu, X, LogOut, User, Settings } from 'lucide-react';
 import { useState } from 'react';
 import { getCurrentUser, logoutUser } from '@/lib/storage';
 import { Button } from '@/components/ui/button';
+import { logo } from '@/images/logo.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
