@@ -4,7 +4,7 @@ import { Menu, X, LogOut, User, Settings } from 'lucide-react';
 import { useState } from 'react';
 import { getCurrentUser, logoutUser } from '@/lib/storage';
 import { Button } from '@/components/ui/button';
-import { logo } from '@/images/logo.png';
+import logo from '@/images/logo.png';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -50,7 +50,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 <img 
                   src={logo} 
                   alt="AILA Logo" 
-                  className="w-[100px] md:w-[100px] sm:w-[170px] h-auto object-contain"
+                  className="w-[170px] md:w-[100px] h-auto object-contain"
                 />
               </motion.div>
             </Link>
@@ -206,7 +206,7 @@ export const Layout = ({ children }: LayoutProps) => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <img 
-                src="/images/logo.png" 
+                src={logo} 
                 alt="AILA Logo" 
                 className="h-5 w-5 object-contain"
               />
