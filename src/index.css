@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 100% 99%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 100% 95%;
+    --secondary-foreground: 199 89% 35%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 199 100% 92%;
+    --accent-foreground: 199 89% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    /* Custom AILA tokens */
+    --gradient-start: 199 100% 97%;
+    --gradient-end: 199 100% 92%;
+    --glow: 199 89% 48%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 25% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 25% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 89% 55%;
+    --primary-foreground: 215 25% 10%;
+
+    --secondary: 199 50% 20%;
+    --secondary-foreground: 199 89% 80%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 199 50% 25%;
+    --accent-foreground: 199 89% 85%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 199 89% 55%;
+
+    --gradient-start: 215 25% 12%;
+    --gradient-end: 199 50% 15%;
+    --glow: 199 89% 55%;
+    --success: 142 76% 45%;
+    --warning: 38 92% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-br from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-[hsl(199,89%,35%)] bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-xl;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 40px -10px hsl(var(--glow) / 0.4);
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .pulse-ring {
+    animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-ring {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--destructive) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 20px hsl(var(--destructive) / 0);
+    }
+  }
+
+  .countdown-pulse {
+    animation: countdown-pulse 1s ease-in-out infinite;
+  }
+
+  @keyframes countdown-pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
